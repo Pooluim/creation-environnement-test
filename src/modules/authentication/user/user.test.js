@@ -1,6 +1,7 @@
 import { describe, it, vi, expect, afterEach } from "vitest";
 import { createUser } from './user.service.js';
 import { createUserInRepository } from './user.repository.js';
+import { HttpBadRequest, HttpForbidden } from "@httpx/exception"; // <-- Ajoute cette ligne
 
 
 vi.mock("./user.repository", async (importOriginal) => ({
@@ -51,5 +52,5 @@ describe("User Service", () => {
       })
     ).rejects.toThrow(HttpForbidden);
   });
-});
+ });
 
