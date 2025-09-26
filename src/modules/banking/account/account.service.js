@@ -30,15 +30,7 @@ export async function deleteAccount(userId, accountId) {
   return deleteAccountInRepository(userId, accountId);
 }
 
-import { HttpBadRequest, HttpForbidden } from "@httpx/exception";
-import { z } from "zod";
-import { createUserInRepository } from "../account/account.service";
-import { calculateAge } from "../../../shared/utils";
-
-export const MIN_USER_AGE = 18;
-
-const UserSchema = z.object({
-  name: z.string().min(2),
-  birthday: z.date(),
-});
-
+// Supprime cette ligne (doublon) :
+// import { HttpBadRequest, HttpForbidden } from "@httpx/exception";
+// Supprime aussi ce doublon :
+// import { z } from "zod";
